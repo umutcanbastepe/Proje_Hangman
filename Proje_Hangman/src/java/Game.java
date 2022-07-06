@@ -80,7 +80,7 @@ public class Game {
             pc.updateTheLists(c, predictedWord, predicted);
 
             if (remainingLives == 0) {
-                System.out.println("Oyunu Kaybettiniz.");
+                System.out.println("Oyunu Kaybettim.");
                 gameFinished = true;
             }
             if (predictedWord.indexOf('*') == -1) {
