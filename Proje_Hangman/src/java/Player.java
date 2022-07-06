@@ -12,12 +12,18 @@ public class Player {
 
     }
 
+    /*
+    @return prediction of a human
+     */
     public char predictLetter(){
         scan = new Scanner(System.in);
         char a = scan.next().charAt(0);
         return a;
     }
 
+    /*
+    @return the length of the word which defined by human
+     */
     public int defineLetterNumber(){
         scan = new Scanner(System.in);
         int number = scan.nextInt();
@@ -28,6 +34,7 @@ public class Player {
 
     /*
         Player tells the places of the true predicted letters by means of this function
+        @return integer
     */
     public int replyOrderOfTruePredictedLetters(){
         scan = new Scanner(System.in);
@@ -37,6 +44,7 @@ public class Player {
 
     /*
         Player tells how many true predicted letter in the chosen word by means of this function
+        @return integer
     */
     public int replyTruePredictedLetterNumber(){
         scan = new Scanner(System.in);
@@ -47,6 +55,7 @@ public class Player {
 
     /*
         Player tells evet(e) or hayır(h) by means of this function
+        @return char
     */
     public char replyQuestion(){
         scan = new Scanner(System.in);

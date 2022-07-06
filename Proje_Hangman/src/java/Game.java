@@ -11,12 +11,14 @@ public class Game {
     private Player player;
     private int remainingLives;
     private int randomNumberToDefinePCPlayer;
-
     private int letterNumber;
     private String chosenWord = "";
     private String predictedWord = "";
     private boolean gameFinished;
 
+    /*
+     Constructor
+     */
     public Game() {
         list = new ArrayList<String>();
         remainingLives = 10;
@@ -35,11 +37,9 @@ public class Game {
         }
 
     }
-
-
+    //Player defines the word
     private void playerDefines() {
         System.out.println("Player defines the word");
-        //Player defines the word
         System.out.print("Harf sayısını belirliyorum: ");
         letterNumber = pc.defineLetterNumber();
         System.out.println("letter number: " + letterNumber);
@@ -47,23 +47,19 @@ public class Game {
         for (int i = 0; i < letterNumber; i++) {
             predictedWord = predictedWord + '*';
         }
-        System.out.println("predictedWord: " + predictedWord);
 
+        System.out.println("predictedWord: " + predictedWord);
 
         while (remainingLives != 0 && gameFinished == false) {
             System.out.print("Harf tahmin ediyorum: ");
             pc.countTheLettersinTempList();
             char predicted = pc.predictLetter();
             System.out.println(predicted);
-
             System.out.print("Bildim mi? (e/h): ");
             char c = player.replyQuestion();
-
-
             if (c == 'e') {
                 System.out.print("Kaç harf bildim: ");
                 int trueNum = player.replyTruePredictedLetterNumber();
-                System.out.print("\n");
                 int places = 0;
                 for (int i = 1; i <= trueNum; i++) {
                     System.out.print(i + ".  harfin sırası: ");
@@ -89,9 +85,9 @@ public class Game {
         }
     }
 
+    //PC defines the word
     private void pcDefines() {
         System.out.println("PC defines the word");
-        //PC defines the word
         System.out.print("Harf sayısı giriniz: ");
         letterNumber = player.defineLetterNumber();
         do {
@@ -104,7 +100,6 @@ public class Game {
             predictedWord = predictedWord + '*';
         }
         System.out.println("predictedWord: " + predictedWord);
-
         while (remainingLives != 0 && gameFinished == false) {
             System.out.print("Harf tahmin edin: ");
             char a = player.predictLetter();
@@ -136,6 +131,8 @@ public class Game {
     /*
         This function reads the turkish_dictionary.txt adds the words to the arrayList by extracting their
         pure word form.
+        @param fileName gets the turkish_dictionary.txt from the resources you need to specify source clearly
+        to work this function correctly.
      */
     private void readFile(String fileName) {
         File file = new File(getClass().getResource(fileName).getPath());

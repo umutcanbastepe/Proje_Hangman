@@ -11,6 +11,7 @@ public class PC {
 
     /*
         Constructor
+        @param list gets the whole dictionary
      */
     public PC(ArrayList<String> list){
         memory = list;
@@ -122,6 +123,9 @@ public class PC {
     /*iff PC has successful guess this function eliminates
     the words that doesn't contain predicted letters
     if PC doesn't have successful guess function resets 0 the index that is the largest one in the letterCounts
+    @param c gets the answer of 'evet' or 'hayır'
+    @param predictedWord gets the word with predicted letter for instance a*a*a(araba)
+    @param predicted gets the last prediction char of the computer
      */
     public void updateTheLists(char c,String predictedWord,char predicted){
         //if PC guesses correctly
@@ -160,6 +164,9 @@ public class PC {
         }
     }
 
+    /*
+    @return the prediction of computer
+     */
     public char predictLetter(){
         char ch  ;
         int index = -1;
@@ -174,6 +181,9 @@ public class PC {
         return ch;
     }
 
+    /*
+    @return the length of the word which is defined by PC randomly
+    */
     public int defineLetterNumber(){
         int number;
         //starts from index 12 because first 11 elements have irrelevant contents
