@@ -27,8 +27,13 @@ public class Game {
         pc = new PC(list);
         player = new Player();
 
-        //randomNumberToDefinePCPlayer = (int)(Math.random()*2);//if this number equals 0 PC defines the word
-        randomNumberToDefinePCPlayer = 1;
+        randomNumberToDefinePCPlayer = (int)(Math.random()*2);//if this number equals 0 PC defines the word
+        /*
+        If you want to see the only artificial intelligence of computer comment the line above and
+        uncomment the line below.
+         */
+        //randomNumberToDefinePCPlayer = 1;
+
         System.out.println("randomNumber: " + randomNumberToDefinePCPlayer);                                                    //if it is 1 Player defines the word
         if (randomNumberToDefinePCPlayer == 0) {
             pcDefines();
