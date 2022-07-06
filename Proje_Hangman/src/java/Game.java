@@ -12,7 +12,6 @@ public class Game {
     private int remainingLives;
     private int randomNumberToDefinePCPlayer;
 
-
     private int letterNumber;
     private String chosenWord = "";
     private String predictedWord = "";
